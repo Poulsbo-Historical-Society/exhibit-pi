@@ -1,0 +1,16 @@
+[Unit]
+Description=VLC Media Player
+After=network.target pulseaudio.service
+
+[Service]
+ExecStartPre=/bin/sleep 10
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/workstation/.Xauthority"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+ExecStart=/usr/bin/cvlc --loop --fullscreen --gles2 egl_x11 --glconv mmal_converter --no-video-title-show /home/rlang/video.mkv
+Restart=on-failure
+RestartSec=10
+User=rlang
+
+[Install]
+WantedBy=multi-user.target
