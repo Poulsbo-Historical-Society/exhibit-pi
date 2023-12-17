@@ -19,6 +19,7 @@ Setting up a Raspberry Pi for PHS Exhibit
    ```
 4) Link the pulseaudio config into place
    ```bash
+   cp /etc/pulse/client.conf /etc/pulse/client.conf.bk
    ln -s pulse.client.conf /etc/pulse/client.conf
    ```
 5) Make the autoplay directory & put something inside it
