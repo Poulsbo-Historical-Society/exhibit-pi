@@ -22,6 +22,11 @@ Setting up a Raspberry Pi for PHS Exhibit
    cp /etc/pulse/client.conf /etc/pulse/client.conf.bk
    ln -s pulse.client.conf /etc/pulse/client.conf
    ```
+5) Set pulse group & disable user-space pulse
+   ```bash
+   usermod -a -G pulse-access phs
+   systemctl --global disable pulseaudio.service pulseaudio.socket
+   ```
 5) Make the autoplay directory & put something inside it
    ```bash
    mkdir /autoplay
@@ -31,8 +36,8 @@ Setting up a Raspberry Pi for PHS Exhibit
    ```
 6) Link the service files, start, and enable them
    ```bash
-   ln -s /home/pi/pulseaudio.service /etc/systemd/system/.
-   ln -s /home/pi/vlc-autoplay.service /etc/systemd/system/.
+   ln -s /home/phs/pulseaudio.service /etc/systemd/system/.
+   ln -s /home/phs/vlc-autoplay.service /etc/systemd/system/.
    systemctl enable /etc/systemd/system/pulseaudio.service
    systemctl enable /etc/systemd/system/vlc-autoplay.service
    systemctl start pulseaudio
