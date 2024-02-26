@@ -2,6 +2,7 @@
 Setting up a Raspberry Pi for PHS Exhibit
 
 1) Image a Raspberry Pi OS Lite install onto your SD card
+      - naming scheme is phs-exhib-0.lan
 2) Install dependencies
    ```bash
    apt install vlc emacs git pulseaudio
