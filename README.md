@@ -2,7 +2,7 @@
 Setting up a Raspberry Pi for PHS Exhibit
 
 1) Image a Raspberry Pi OS Lite install onto your SD card
-      - naming scheme is phs-exhib-0.lan
+      - naming scheme is phs-exhib-0.lan, username=phs
 2) Install dependencies
    ```bash
    apt install vlc emacs git pulseaudio
@@ -20,7 +20,7 @@ Setting up a Raspberry Pi for PHS Exhibit
    ```
 4) Link the pulseaudio config into place
    ```bash
-   cp /etc/pulse/client.conf /etc/pulse/client.conf.bk
+   mv /etc/pulse/client.conf /etc/pulse/client.conf.bk
    ln -s pulse.client.conf /etc/pulse/client.conf
    ```
 5) Set pulse group & disable user-space pulse
@@ -33,12 +33,15 @@ Setting up a Raspberry Pi for PHS Exhibit
    mkdir /autoplay
    chmod 777 /autoplay
 
-   # 5b) scp video files into /autoplay, or copy them via usb
+   # scp video files into /autoplay, or copy them via usb
+   # if subtitles are available they should be named the same
+   # as the video file with .srt extension
+   
    ```
 6) Link the service files, start, and enable them
    ```bash
-   ln -s /home/phs/pulseaudio.service /etc/systemd/system/.
-   ln -s /home/phs/vlc-autoplay.service /etc/systemd/system/.
+   ln -s /home/phs/exhibit-pi/pulseaudio.service /etc/systemd/system/.
+   ln -s /home/phs/exhibit-pi/vlc-autoplay.service /etc/systemd/system/.
    systemctl enable /etc/systemd/system/pulseaudio.service
    systemctl enable /etc/systemd/system/vlc-autoplay.service
    systemctl start pulseaudio
