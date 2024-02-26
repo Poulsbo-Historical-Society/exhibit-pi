@@ -10,7 +10,7 @@ Environment="XDG_RUNTIME_DIR=/run/user/1000"
 ExecStart=/usr/bin/cvlc --loop --fullscreen --gles2 egl_x11 --glconv mmal_converter --no-video-title-show /autoplay/video.mkv
 Restart=on-failure
 RestartSec=10
-User=rlang
+User=phs
 
 [Install]
 WantedBy=multi-user.target
