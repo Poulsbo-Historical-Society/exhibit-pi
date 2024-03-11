@@ -11,7 +11,7 @@ Setting up a Raspberry Pi for PHS Exhibit
    ```bash
    ssh-keygen -t rsa -b 4096
    ```
-   3b) add ssh key to repo's "Deploy keys" setting
+   3b) add ssh key to repo's ["Deploy keys" setting](https://github.com/Poulsbo-Historical-Society/exhibit-pi/settings/keys)
    
 3) Clone this repository
    ```bash
