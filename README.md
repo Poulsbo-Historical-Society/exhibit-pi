@@ -5,7 +5,7 @@ Setting up a Raspberry Pi for PHS Exhibit
       - naming scheme is phs-exhib-0.lan, username=phs
 2) Install dependencies
    ```bash
-   apt update && apt install vlc emacs git pulseaudio
+   apt update && apt upgrade && apt install vlc emacs git pulseaudio
    ```
 3) Add a deploy key
    ```bash
