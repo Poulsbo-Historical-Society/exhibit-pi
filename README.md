@@ -9,7 +9,7 @@ Setting up a Raspberry Pi for PHS Exhibit
    ```
 3) Clone this repository
    ```bash
-   git clone git@github.com:Poulsbo-Historical-Society/exhibit-pi.git
+   git clone https://github.com/Poulsbo-Historical-Society/exhibit-pi.git
    cd exhibit-pi
    ```
 4) Link the pulseaudio config into place
